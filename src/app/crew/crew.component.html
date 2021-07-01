@@ -1,7 +1,6 @@
 <h3>Crew</h3>
 <ul>
    <li *ngFor="let member of crew">
-
       <span *ngIf="memberBeingEdited !== member; else elseBlock">
          <!-- display state of member -->
          <span (click)="edit(member)" class="editable-text">{{member.name}}</span>
@@ -21,4 +20,13 @@
 </ul>
 <input #name type="text"/>
 <label>First mission<input #firstMission type="checkbox"/></label>
+<!-- <span *ngIf = "checkDuplicate(name.value); else elseDuplicateBlock"> -->
+   <!-- <button *ngIf = "!crew.includes(name.value)" -->
 <button (click)="add(name.value, firstMission.checked)">Add</button>
+<!-- </span> -->
+
+<!-- <ng-template #elseDuplicateBlock>
+   <input #name type="text"/>
+   <label>First mission<input #firstMission type="checkbox"/></label>
+    <button (click)="add(name.value, firstMission.checked)">Add</button>
+</ng-template> -->
